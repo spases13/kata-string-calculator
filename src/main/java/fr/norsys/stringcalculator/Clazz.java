@@ -1,5 +1,8 @@
 package fr.norsys.stringcalculator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Clazz {
 
   public boolean hasNewDeliemeter(String str) {
@@ -28,13 +31,22 @@ public class Clazz {
   }
 
   public int Add(String numbers) {
-
-
     String[] arrOfNumbersString = getNumbersAsArray(numbers);
     int result = 0;
+    List<String> negativeNumbers = new ArrayList<>();
 
     for (int i = 0; i < arrOfNumbersString.length; i++) {
-      result += Integer.parseInt(arrOfNumbersString[i]);
+      int num = Integer.parseInt(arrOfNumbersString[i]);
+
+      if (num < 0) {
+        negativeNumbers.add(Integer.toString(num));
+      }
+
+      result += num;
+    }
+
+    if (!negativeNumbers.isEmpty()) {
+      throw new IllegalArgumentException("Negatives not allowed: " + String.join(", ", negativeNumbers));
     }
 
     return result;
