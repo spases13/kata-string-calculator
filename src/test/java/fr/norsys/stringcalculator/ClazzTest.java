@@ -37,5 +37,19 @@ public class ClazzTest {
         assertEquals(6, result);
     }
 
+    @Test
+    public void checkAddWithNewLineOnly() {
+        Clazz c = new Clazz();
+        int result = c.Add("1\n3");
+        assertEquals(4, result);
+    }
+
+    @Test
+    public void checkAddWithNewLineAndCommaAttachedOnly() {
+        Clazz c = new Clazz();
+        int result = c.Add("2,\n3");
+        assertEquals(5, result);
+    }
+
 
 }
