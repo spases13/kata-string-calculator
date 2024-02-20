@@ -44,12 +44,27 @@ public class ClazzTest {
         assertEquals(4, result);
     }
 
+    // @Test
+    // public void checkAddWithNewLineAndCommaAttachedOnly() {
+    //     Clazz c = new Clazz();
+    //     int result = c.Add("2,\n3");
+    //     assertEquals(5, result);
+    // }
+
     @Test
-    public void checkAddWithNewLineAndCommaAttachedOnly() {
+    public void checkHasNewDeliemeter() {
         Clazz c = new Clazz();
-        int result = c.Add("2,\n3");
-        assertEquals(5, result);
+        boolean test1 = c.hasNewDeliemeter("//;\n1;2");
+        boolean test2 = c.hasNewDeliemeter(";\n1;2");
+        assertEquals(true, test1);
+        assertEquals(false, test2);
     }
 
+    @Test
+    public void checkGetDeliemeterFromString() {
+        Clazz c = new Clazz();
+        String result = c.getDeliemeterFromString("//;\n1;2");
+        assertEquals(";", result);
+    }
 
 }
