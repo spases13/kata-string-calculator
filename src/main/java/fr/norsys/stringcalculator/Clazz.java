@@ -9,20 +9,17 @@ public class Clazz {
 
   public int Add(String numbers) {
     String[] arrOfNumbersString = getNumbersAsArray(numbers);
-    switch (arrOfNumbersString.length) {
-      case 0:
-        return 0;
-      case 1:
-        return Integer.parseInt(arrOfNumbersString[0]);
-      case 2:
-        return Integer.parseInt(arrOfNumbersString[0]) + Integer.parseInt(arrOfNumbersString[1]);
-      default:
-        return -1;
+    int result = 0 ;
+
+    for (int i = 0; i < arrOfNumbersString.length; i++) {
+      result += Integer.parseInt(arrOfNumbersString[i]);
     }
+
+    return result;
   }
 
   public static void main(String[] args) {
     Clazz c = new Clazz();
-    System.out.println(c.Add("5,9"));
+    System.out.println(c.Add(""));
   }
 }
