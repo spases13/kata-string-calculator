@@ -1,12 +1,7 @@
 package fr.norsys.stringcalculator;
 
-/**
- * ClazzTest
- */
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Test;
 
 public class ClazzTest {
@@ -76,5 +71,11 @@ public class ClazzTest {
     assertEquals("Negatives not allowed: -3, -7", exception.getMessage());
   }
 
-  
+  @Test
+  public void checkIgnoreNumbersBiggerThan1000() {
+    Clazz c = new Clazz();
+    int result = c.Add("2,1001");
+    assertEquals(2, result);
+  }
+
 }

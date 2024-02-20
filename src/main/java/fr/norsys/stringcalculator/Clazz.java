@@ -37,7 +37,8 @@ public class Clazz {
 
     for (int i = 0; i < arrOfNumbersString.length; i++) {
       int num = Integer.parseInt(arrOfNumbersString[i]);
-
+      if (num > 1000)
+        continue;
       if (num < 0) {
         negativeNumbers.add(Integer.toString(num));
       }
