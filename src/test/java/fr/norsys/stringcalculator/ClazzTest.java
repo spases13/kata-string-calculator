@@ -30,5 +30,12 @@ public class ClazzTest {
         assertEquals(10, result);
     }
 
+    @Test
+    public void checkAddWithNewLineDelimiter() {
+        Clazz c = new Clazz();
+        int result = c.Add("1\n2,3");
+        assertEquals(6, result);
+    }
+
 
 }
