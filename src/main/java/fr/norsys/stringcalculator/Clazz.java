@@ -18,7 +18,7 @@ public class Clazz {
   }
 
   public String[] getNumbersAsArray(String numbersStr) {
-    String delimetersRegex = "[,\n;]";
+    String delimetersRegex = "[,\n]";
     if (hasNewDeliemeter(numbersStr)) {
       String newDelimeter = getDeliemeterFromString(numbersStr);
       delimetersRegex = "[\n" + newDelimeter + "]";
